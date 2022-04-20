@@ -1,4 +1,9 @@
-import {LightningElement, wire, track, api} from 'lwc';
+import {
+    LightningElement,
+    wire,
+    track,
+    api
+} from 'lwc';
 //importing the Chart library from Static resources
 import chartjs from '@salesforce/resourceUrl/ChartJs';
 import {
@@ -31,7 +36,16 @@ export default class Chartaccount extends LightningElement {
 
         this.picklistVal = event.target.value;
         this.isRendered = true;
+        var maindata = this.alldata;
+        this.chart.data.labels.splice(0, this.arraylength);
+        this.chart.data.datasets[0].data.splice(0, this.arraylength);
+       // chart.data.labels.splice(-1, this.arraylength); // remove the label first
 
+      /*  chart.data.datasets.forEach(dataset => {
+            dataset.data.pop();
+        });*/
+
+        chart.update();
     }
     @wire(getLeadByStatus, {
         status: '$picklistVal'
@@ -108,20 +122,7 @@ export default class Chartaccount extends LightningElement {
     }
     @track currentChart;
     handleClick(event) {
-        var maindata = this.alldata;
-        console.log('this.arraylength', this.alldata);
-        console.log('this.arraylength', this.arraylength);
-
-        console.log('fghj', elements);
-        this.chart.data.labels.splice(0, this.arraylength);
-        this.chart.data.datasets[0].data.splice(0, this.arraylength);
-        chart.data.labels.splice(-1, this.arraylength); // remove the label first
-
-        chart.data.datasets.forEach(dataset => {
-            dataset.data.pop();
-        });
-
-        chart.update();
+       
 
 
     }
