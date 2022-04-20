@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title='Sample Chart'>
+      <div class="slds-select_container">
+          
+        <select id ="chartType" class="slds-select" onchange={selectOptionChanveValue}>
+              <option value="">---None---</option>                
+                <template for:each={selectTargetValues.data} for:item="selectOptItem">
+                   <option key={selectOptItem.custFldvalue} value={selectOptItem.custFldvalue}>
+                     {selectOptItem.custFldlabel}
+                   </option>
+              </template>
+        </select>
+      </div>
+     
+      <div>
+         <canvas id="myCanvas" class="donut" lwc:dom="manual"></canvas>
+        <canvas id="myCanvasd" class="donuts" lwc:dom="manual"></canvas>
+      </div>
+    </lightning-card>
+</template>
