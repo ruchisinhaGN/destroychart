@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { LightningElement,wire, track, api} from 'lwc';
 import chartjs from '@salesforce/resourceUrl/ChartJs';
 import {loadScript} from 'lightning/platformResourceLoader';
