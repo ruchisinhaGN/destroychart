@@ -2,7 +2,6 @@ public class LeadGraphController
 {
 @AuraEnabled(cacheable = true)
     public static List<DataSet> getLeadByStatus(String status ,string Users ) {
-       
         String status_val = status;
         system.debug(status_val);
          String query ='Select Count(Owner.Id) leadCount,  Owner.Name Name from Case  where Status =  \''+  status_val +'\'  GROUP BY  Status, Owner.Name LIMIT ' + Users + '';

@@ -11,8 +11,7 @@
               </template>
         </select>
       </div>
-     
-      <div>
+     <div>
          <canvas id="myCanvas" class="donut" lwc:dom="manual"></canvas>
         <canvas id="myCanvasd" class="donuts" lwc:dom="manual"></canvas>
       </div>

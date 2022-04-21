@@ -1,6 +1,5 @@
 public with sharing class lwcPicklistController {
     
-     //fetch picklist values from custom object in lwc
      @AuraEnabled(cacheable=true)
      public static List < customValueWrapper > pickListValueDynamically(sObject customObjInfo, string selectPicklistApi) {
          system.debug('customObjInfo' +customObjInfo);

@@ -8,8 +8,7 @@ import { LightningElement,wire,track,api} from 'lwc';
    import pickListValueDynamically from '@salesforce/apex/lwcPicklistController.pickListValueDynamically';
    import { refreshApex } from '@salesforce/apex';
    export default class Chartaccount extends LightningElement {
-
-   @track picklistVal;
+@track picklistVal;
   @track isRendered ;
 @api  repeat = false;
     @wire(pickListValueDynamically, {customObjInfo: {'sobjectType' : 'Case'},
